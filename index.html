@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Urban Carnivora — premium dog and cat grooming, boarding and pet care in Medahalli, Bengaluru.">
+  <title>Urban Carnivora | Pet Grooming & Boarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#172018;
+      --muted:#66706a;
+      --cream:#fbf8f1;
+      --card:#ffffff;
+      --orange:#f47721;
+      --orange-dark:#d95e0c;
+      --mint:#e8f2e8;
+      --lav:#eee7fb;
+      --line:#e8e3da;
+      --shadow:0 18px 55px rgba(28,34,29,.10);
+      --radius:28px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--cream);font-family:"DM Sans",system-ui,sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(251,248,241,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,227,218,.8)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.4px}
+    .brand-mark{width:40px;height:40px;border-radius:13px;background:var(--orange);display:grid;place-items:center;color:white;font-size:21px;box-shadow:0 8px 22px rgba(244,119,33,.25)}
+    .links{display:flex;gap:28px;color:#4e5751;font-weight:600;font-size:14px}
+    .links a:hover{color:var(--orange)}
+    .nav-cta{padding:11px 18px;border-radius:999px;background:var(--ink);color:white;font-weight:700;font-size:14px}
+    .hero{padding:72px 0 60px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:58px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 13px;border-radius:999px;color:#5b665f;font-size:13px;font-weight:700}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(46px,6vw,78px);line-height:.98;letter-spacing:-2.5px;margin:20px 0}
+    h1 span{color:var(--orange)}
+    .hero-copy{font-size:18px;color:var(--muted);max-width:600px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:14px;font-weight:800;border:1px solid transparent;transition:.2s transform,.2s box-shadow}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--orange);color:white;box-shadow:0 12px 28px rgba(244,119,33,.25)}
+    .btn-secondary{background:white;border-color:var(--line)}
+    .hero-card{position:relative;min-height:520px;border-radius:38px;background:linear-gradient(145deg,#dcefdc,#f3eadf);box-shadow:var(--shadow);overflow:hidden}
+    .hero-card:before{content:"";position:absolute;inset:22px;border:1px solid rgba(255,255,255,.75);border-radius:30px}
+    .hero-badge{position:absolute;top:28px;left:28px;background:white;border-radius:16px;padding:12px 15px;font-size:13px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.08);z-index:2}
+    .hero-image{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
+    .hero-image img{width:92%;height:92%;object-fit:cover;object-position:center bottom;mix-blend-mode:multiply;filter:saturate(.95)}
+    .floating{position:absolute;right:22px;bottom:24px;background:white;border-radius:20px;padding:16px 18px;box-shadow:0 14px 35px rgba(0,0,0,.12);z-index:3}
+    .floating strong{display:block;font-size:16px}.floating small{color:var(--muted)}
+    section{padding:88px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+    .section-head h2{font-family:"Playfair Display",serif;font-size:44px;line-height:1.05;margin:0;letter-spacing:-1.3px}
+    .section-head p{max-width:520px;color:var(--muted);margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 10px 30px rgba(28,34,29,.05)}
+    .icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--mint);font-size:23px;margin-bottom:20px}
+    .service:nth-child(2n) .icon{background:var(--lav)}
+    .service h3{margin:0 0 7px;font-size:20px}.service p{margin:0;color:var(--muted);font-size:14px}
+    .packages{background:#182019;color:white}
+    .packages .section-head p{color:#c3cbc5}
+    .package-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .package{border-radius:28px;padding:32px;background:#222c24;border:1px solid #354238}
+    .package.featured{background:linear-gradient(145deg,#fff7ec,#ffe8d2);color:var(--ink);border:0}
+    .tag{display:inline-block;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;background:rgba(255,255,255,.12);margin-bottom:17px}
+    .featured .tag{background:#fff0df;color:var(--orange-dark)}
+    .package h3{font-size:28px;margin:0 0 5px}.package .sub{color:#aeb9b1;font-size:13px;margin-bottom:20px}.featured .sub{color:var(--muted)}
+    .price-list{display:grid;gap:0}
+    .price-row{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.10);font-size:15px}
+    .featured .price-row{border-color:#eadfce}.price-row:last-child{border-bottom:0}
+    .price-row strong{white-space:nowrap}
+    .why{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+    .why-panel{background:linear-gradient(145deg,#f1eadf,#e5f1e6);border-radius:34px;min-height:430px;padding:34px;position:relative;overflow:hidden}
+    .why-panel .quote{font-family:"Playfair Display",serif;font-size:36px;line-height:1.15;max-width:420px;position:relative;z-index:2}
+    .why-panel .mini{position:absolute;bottom:28px;left:28px;background:white;padding:14px 16px;border-radius:16px;box-shadow:var(--shadow);font-size:13px}
+    .points{display:grid;gap:18px}.point{display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start}
+    .point-num{width:42px;height:42px;border-radius:14px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800}
+    .point h3{margin:0 0 4px;font-size:18px}.point p{margin:0;color:var(--muted);font-size:14px}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:230px;gap:16px}
+    .gallery figure{margin:0;border-radius:22px;overflow:hidden;background:#eee;border:1px solid var(--line)}
+    .gallery figure:first-child{grid-row:span 2}
+    .gallery img{width:100%;height:100%;object-fit:cover}
+    .contact{background:#fff;border-top:1px solid var(--line)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-card{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:28px}
+    .contact-card h3{margin:0 0 15px;font-size:24px}
+    .contact-row{display:flex;gap:12px;margin:13px 0;color:#465149}
+    .contact-row b{color:var(--ink)}
+    .map{min-height:100%;border-radius:24px;background:linear-gradient(135deg,#d9e9d9,#e9dfd2);padding:28px;display:flex;flex-direction:column;justify-content:flex-end}
+    footer{padding:28px 0;color:#7a827c;font-size:13px}
+    .mobile-menu{display:none}
+    @media(max-width:900px){
+      .links{display:none}.mobile-menu{display:block;background:white;border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+      .hero-grid,.why,.contact-grid{grid-template-columns:1fr}.hero-card{min-height:430px}
+      .services{grid-template-columns:1fr 1fr}.package-grid{grid-template-columns:1fr}
+      .section-head{display:block}.section-head p{margin-top:12px}
+    }
+    @media(max-width:620px){
+      .container{width:min(var(--max),calc(100% - 24px))}
+      .nav-inner{height:68px}.nav-cta{padding:10px 13px;font-size:12px}
+      .hero{padding:48px 0 34px} h1{font-size:50px}
+      section{padding:62px 0}.services{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery figure:first-child{grid-row:span 2}
+      .hero-card{min-height:360px}.floating{right:14px;bottom:14px}
+      .actions .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">🐾</span><span>Urban Carnivora</span></a>
+      <nav class="links">
+        <a href="#services">Services</a><a href="#packages">Packages</a><a href="#why">Why Us</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/917019226729?text=Hi%20Urban%20Carnivora%2C%20I%27d%20like%20to%20book%20a%20pet%20grooming%20service." target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Pet Grooming • Boarding • Pet Store</div>
+          <h1>Where pets leave <span>fresh, happy & confident.</span></h1>
+          <p class="hero-copy">A clean, comfortable pet-care space in Medahalli, Bengaluru for grooming, bathing, styling, boarding and everyday pet essentials.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/917019226729?text=Hi%20Urban%20Carnivora%2C%20I%27d%20like%20to%20book%20a%20pet%20grooming%20service." target="_blank" rel="noopener">🐾 Book on WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+917019226729">Call 70192 26729</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-badge">Trusted local pet care</div>
+          <div class="hero-image"><img src="assets/reference-7.jpeg" alt="Urban Carnivora pet grooming reference"></div>
+          <div class="floating"><strong>Dog & Cat Grooming</strong><small>Small & large breed packages</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything your pet needs.</h2>
+          <p>From a simple bath to a complete grooming session, Urban Carnivora brings everyday pet care together in one place.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="icon">🛁</div><h3>Bathing & Blow Dry</h3><p>Fresh, comfortable bathing followed by a proper blow-dry finish.</p></article>
+          <article class="service"><div class="icon">✂️</div><h3>Grooming & Styling</h3><p>Breed-conscious trimming, brushing, de-matting and styling.</p></article>
+          <article class="service"><div class="icon">🐾</div><h3>Paws, Nails & Hygiene</h3><p>Nail clipping, paw care, sanitary trimming and routine cleaning.</p></article>
+          <article class="service"><div class="icon">👂</div><h3>Ear & Eye Cleaning</h3><p>Gentle routine cleaning as part of selected grooming packages.</p></article>
+          <article class="service"><div class="icon">🏠</div><h3>Pet Boarding</h3><p>Boarding and stay options for dogs and cats when you are away.</p></article>
+          <article class="service"><div class="icon">🛍️</div><h3>Pet Store</h3><p>Pet essentials including food, belts, leashes and everyday supplies.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages" class="packages">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple packages. Clear pricing.</h2>
+          <p>Pricing shown from the supplied Urban Carnivora reference cards. Confirm final price and availability before booking.</p>
+        </div>
+        <div class="package-grid">
+          <article class="package featured">
+            <span class="tag">SMALL BREEDS</span>
+            <h3>Small Breed Packages</h3>
+            <p class="sub">Examples: Shih Tzu, Pomeranian, Beagle, Dachshund, Pug, Poodle, Cocker Spaniel.</p>
+            <div class="price-list">
+              <div class="price-row"><span>Advance Package — Full Grooming</span><strong>₹1,800</strong></div>
+              <div class="price-row"><span>Basic Package — Grooming</span><strong>₹1,200</strong></div>
+              <div class="price-row"><span>Hair Trimming</span><strong>₹1,000</strong></div>
+              <div class="price-row"><span>Bathing</span><strong>₹500</strong></div>
+              <div class="price-row"><span>Nail Clipping</span><strong>₹250</strong></div>
+              <div class="price-row"><span>Sanitary, Ear, Paws Trimming & Cleaning</span><strong>₹450</strong></div>
+            </div>
+          </article>
+          <article class="package">
+            <span class="tag">LARGE BREEDS</span>
+            <h3>Large Breed Packages</h3>
+            <p class="sub">Examples: Husky, German Shepherd, Labrador, Rottweiler.</p>
+            <div class="price-list">
+              <div class="price-row"><span>Advance Package — Full Grooming</span><strong>₹2,200</strong></div>
+              <div class="price-row"><span>Basic Package — Grooming</span><strong>₹1,500</strong></div>
+              <div class="price-row"><span>Hair Trimming</span><strong>₹1,200</strong></div>
+              <div class="price-row"><span>Bathing</span><strong>₹800</strong></div>
+              <div class="price-row"><span>Nail Clipping</span><strong>₹350</strong></div>
+              <div class="price-row"><span>Sanitary, Ear, Paws Trimming & Cleaning</span><strong>₹500</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container why">
+        <div class="why-panel">
+          <div class="quote">“A better grooming experience starts with a better environment.”</div>
+          <div class="mini">Hygienic • Comfortable • Parking available</div>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom:24px"><h2>Care that feels personal.</h2></div>
+          <div class="points">
+            <div class="point"><div class="point-num">01</div><div><h3>Made for dogs & cats</h3><p>Services are presented around common grooming and boarding needs for pets.</p></div></div>
+            <div class="point"><div class="point-num">02</div><div><h3>Breed-aware packages</h3><p>Separate small and large breed pricing makes it easier to choose a starting point.</p></div></div>
+            <div class="point"><div class="point-num">03</div><div><h3>Easy booking</h3><p>Call or message directly on WhatsApp to check availability and book.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <h2>See the Urban Carnivora style.</h2>
+          <p>A visual showcase using the reference material you provided. Replace these with original high-resolution business photos for the final marketing launch.</p>
+        </div>
+        <div class="gallery">
+          <figure><img src="assets/reference-9.jpeg" alt="Urban Carnivora reference"></figure>
+          <figure><img src="assets/reference-3.jpeg" alt="Urban Carnivora grooming package"></figure>
+          <figure><img src="assets/reference-6.jpeg" alt="Urban Carnivora large breed package"></figure>
+          <figure><img src="assets/reference-1.jpeg" alt="Urban Carnivora service reference"></figure>
+          <figure><img src="assets/reference-5.jpeg" alt="Urban Carnivora business listing reference"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ready for a cleaner, happier pet?</h2>
+          <p>Reach Urban Carnivora directly to confirm a service, price and available slot.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Urban Carnivora</h3>
+            <div class="contact-row">📍 <span>Karnashree Layout, near BigDay Super Mart,<br>Medahalli, Kithiganur, Bengaluru, Karnataka 560049</span></div>
+            <div class="contact-row">📞 <span><b>70192 26729</b> / 88927 68971</span></div>
+            <div class="contact-row">🌐 <span>urbancarnivora.com</span></div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://wa.me/917019226729?text=Hi%20Urban%20Carnivora%2C%20I%27d%20like%20to%20check%20availability." target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-secondary" href="tel:+917019226729">Call Now</a>
+            </div>
+          </div>
+          <div class="map">
+            <div>
+              <strong style="font-size:23px">Visit us in Medahalli</strong>
+              <p style="color:#59635c;max-width:430px">Use the map button below for directions. The address is based on the business information in your supplied reference.</p>
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Urban%20Carnivora%20Karnashree%20Layout%20Medahalli%20Bengaluru" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Urban Carnivora. Pet grooming & boarding. Built for marketing and direct bookings.</div>
+  </footer>
+</body>
+</html>
